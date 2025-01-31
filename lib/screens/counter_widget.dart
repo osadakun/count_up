@@ -62,6 +62,11 @@ class CounterPage extends HookConsumerWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            SizedBox(
+              width: double.infinity,
+              child: Image.asset("assets/images/res.png"),
+            ),
+            SizedBox(height: 16),
             Row(
               children: [
                 Expanded(
