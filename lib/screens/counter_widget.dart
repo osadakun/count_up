@@ -114,8 +114,7 @@ class CounterPage extends HookConsumerWidget {
               state.regCountWithDuplicates,
               (value) => viewModel.updateRegCountWithDuplicates(value),
               Colors.blueGrey,
-              calculateRatio(state.regCountWithDuplicates +
-                  state.regCountWithoutDuplicates),
+              calculateRatio(state.regCountWithDuplicates),
             ),
             _buildCounterItem(
               context,
@@ -123,8 +122,7 @@ class CounterPage extends HookConsumerWidget {
               state.regCountWithoutDuplicates,
               (value) => viewModel.updateRegCountWithoutDuplicates(value),
               Colors.blueGrey,
-              calculateRatio(state.regCountWithDuplicates +
-                  state.regCountWithoutDuplicates),
+              calculateRatio(state.regCountWithoutDuplicates),
             ),
             _buildCounterItem(
               context,
@@ -132,8 +130,7 @@ class CounterPage extends HookConsumerWidget {
               state.bigCountWithDuplicates,
               (value) => viewModel.updateBigCountWithDuplicates(value),
               Colors.black,
-              calculateRatio(state.bigCountWithDuplicates +
-                  state.bigCountWithoutDuplicates),
+              calculateRatio(state.bigCountWithDuplicates),
             ),
             _buildCounterItem(
               context,
@@ -141,8 +138,7 @@ class CounterPage extends HookConsumerWidget {
               state.bigCountWithoutDuplicates,
               (value) => viewModel.updateBigCountWithoutDuplicates(value),
               Colors.black,
-              calculateRatio(state.bigCountWithDuplicates +
-                  state.bigCountWithoutDuplicates),
+              calculateRatio(state.bigCountWithoutDuplicates),
             ),
           ],
         ),
@@ -182,7 +178,10 @@ class CounterPage extends HookConsumerWidget {
                         fontWeight: FontWeight.w900,
                         color: color)),
                 Text('割合: $ratio',
-                    style: const TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500)),
+                    style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500)),
               ],
             ),
             const SizedBox(height: 8),
@@ -190,8 +189,9 @@ class CounterPage extends HookConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.remove_circle, color: Colors.redAccent),
-                  iconSize: 32,
+                  icon:
+                      const Icon(Icons.remove_circle, color: Colors.redAccent),
+                  iconSize: 48,
                   onPressed: () => onUpdate(-1),
                 ),
                 SizedBox(
@@ -213,7 +213,7 @@ class CounterPage extends HookConsumerWidget {
                 ),
                 IconButton(
                   icon: const Icon(Icons.add_circle, color: Colors.blueAccent),
-                  iconSize: 32,
+                  iconSize: 48,
                   onPressed: () => onUpdate(1),
                 ),
               ],
